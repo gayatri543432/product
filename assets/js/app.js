@@ -189,6 +189,12 @@ function updateOnUI(res){
     card.querySelector('.card-body p').innerHTML=res.description;
     card.querySelector('.card-body img').innerHTML=res.imgage;
 
+    let header = card.querySelector('.card-header');
+
+    header.setAttribute('title', res.title);
+
+    $(header).tooltip('dispose');
+    tooltips();
     card.classList.add('bg')
     card.scrollIntoView({
         behavior:'smooth',
